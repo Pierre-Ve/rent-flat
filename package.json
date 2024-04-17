@@ -31,8 +31,5 @@
   "lint-staged": {
     "*": "prettier --write --ignore-unknown",
     "*.{js,ts,vue}": "eslint --fix"
-  },
-  "bin": {
-    "create-veillet-node-app": "./install.mjs"
   }
 }

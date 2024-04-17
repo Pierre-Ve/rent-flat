@@ -19,6 +19,7 @@ sequelize.sync({ force: true }).then(() => {
       admin: false,
       password: hash,
       age: 30,
+      children: 2,
       height: 170,
       city: "Lyon",
     }).then((user) => {

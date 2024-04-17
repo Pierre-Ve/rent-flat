@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 
+import { sequelize } from "./db/sequelize.js";
 import { router } from "./routes/router.js";
 
 const port = process.env.PORT || 3000;
@@ -17,6 +18,10 @@ app
       message: "Not Found",
     });
   });
+
+sequelize.sync().then(() => {
+  console.log("Database synchronized");
+});
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

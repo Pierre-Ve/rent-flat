@@ -1,5 +1,7 @@
 import express from "express";
 import { authenticationController } from "../controllers/authentication.controller.js";
+import { accomodationController } from "../controllers/accomodation.controller.js";
+import { auth } from "../middlewares/auth.middleware.js";
 
 const router = express.Router();
 
@@ -10,5 +12,8 @@ router.get("/", (req, res) => {
 });
 
 router.post("/login", ...authenticationController.loginRoute);
+
+router.use(auth); // All the routes that need authentication must be placed after this middleware
+router.post("/accomodation", ...accomodationController.createAccomodation);
 
 export { router };

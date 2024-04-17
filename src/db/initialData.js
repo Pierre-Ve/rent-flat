@@ -11,6 +11,13 @@ sequelize.sync({ force: true }).then(() => {
     }).then((user) => {
       console.log(user.toJSON());
     });
+    User.create({
+      username: "pierre",
+      admin: false,
+      password: hash,
+    }).then((user) => {
+      console.log(user.toJSON());
+    });
   });
   console.log('La base de donnée "flatRental" a bien été synchronisée.');
 });

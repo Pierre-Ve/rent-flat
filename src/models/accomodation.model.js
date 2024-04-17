@@ -1,3 +1,5 @@
+import { User } from "../db/sequelize.js";
+
 const AccomodationModel = (sequelize, DataTypes) => {
   return sequelize.define("Accomodation", {
     id: {
@@ -16,7 +18,7 @@ const AccomodationModel = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "User",
+        model: User,
         key: "id",
       },
     },

@@ -13,7 +13,6 @@ const create = (req, res) => {
   User.findByPk(req.userId).then((user) => {
     if (user.admin) {
       accomodation.userID = user.id;
-      console.log(accomodation.toJSON());
       accomodation
         .save()
         .then((result) => {

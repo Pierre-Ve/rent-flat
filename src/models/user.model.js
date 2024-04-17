@@ -18,6 +18,19 @@ const UserModel = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
+    age: {
+      type: DataTypes.INTEGER,
+    },
+    height: {
+      type: DataTypes.INTEGER,
+    },
+    city: {
+      type: DataTypes.STRING,
+    },
+    children: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+    },
   });
 };
 

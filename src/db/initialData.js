@@ -8,6 +8,9 @@ sequelize.sync({ force: true }).then(() => {
       username: "admin",
       admin: true,
       password: hash,
+      age: 25,
+      height: 180,
+      city: "Paris",
     }).then((user) => {
       console.log(user.toJSON());
     });
@@ -15,6 +18,9 @@ sequelize.sync({ force: true }).then(() => {
       username: "user",
       admin: false,
       password: hash,
+      age: 30,
+      height: 170,
+      city: "Lyon",
     }).then((user) => {
       console.log(user.toJSON());
     });
